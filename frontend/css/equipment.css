@@ -1,0 +1,612 @@
+/* ============================================
+   GEARGUARD EQUIPMENT STYLES
+   ============================================ */
+
+/* Page Header with Button */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.btn-add {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+/* ========== Filters Bar ========== */
+.filters-bar {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 150px;
+}
+
+.filter-group label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-group select,
+.filter-group input {
+    padding: 0.6rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+.filter-group select option {
+    background: var(--dark-bg);
+}
+
+.filter-group input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.search-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* ========== Equipment Grid ========== */
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.equipment-grid .full-width {
+    grid-column: 1 / -1;
+}
+
+/* ========== Equipment Card ========== */
+.equipment-card {
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.equipment-card.status-active {
+    border-left-color: var(--success);
+}
+
+.equipment-card.status-maintenance {
+    border-left-color: var(--gold);
+}
+
+.equipment-card.status-scrapped {
+    border-left-color: #888;
+    opacity: 0.7;
+}
+
+.eq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.eq-category {
+    font-size: 1.5rem;
+}
+
+.status-badge {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.status-active {
+    background: rgba(78, 205, 196, 0.2);
+    color: var(--success);
+}
+
+.status-badge.status-maintenance {
+    background: rgba(255, 215, 0, 0.2);
+    color: var(--gold);
+}
+
+.status-badge.status-scrapped {
+    background: rgba(128, 128, 128, 0.2);
+    color: #888;
+}
+
+.eq-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+}
+
+.eq-serial {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-family: monospace;
+    margin-bottom: 1rem;
+}
+
+.eq-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.eq-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+}
+
+.detail-value {
+    font-size: 0.85rem;
+    color: var(--white);
+}
+
+.warranty-expired {
+    color: var(--danger) !important;
+}
+
+.warranty-warning {
+    color: var(--gold) !important;
+}
+
+/* ========== Equipment Actions ========== */
+.eq-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.eq-actions button {
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.eq-actions button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-maintenance {
+    background: rgba(255, 215, 0, 0.1) !important;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn-maintenance:hover {
+    background: rgba(255, 215, 0, 0.2) !important;
+}
+
+.request-count {
+    background: var(--gold);
+    color: var(--black);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.1rem 0.4rem;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* ========== Modal Styles ========== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2rem;
+    animation: modalSlideIn 0.3s ease;
+    /* Solid background for readability */
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.98) 0%, rgba(15, 15, 30, 0.98) 100%);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.1);
+}
+
+/* Override glass-card for modals */
+.modal-content.glass-card {
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.98) 0%, rgba(15, 15, 30, 0.98) 100%);
+    backdrop-filter: blur(20px);
+}
+
+.modal-content.glass-card:hover {
+    transform: none;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h2 {
+    font-size: 1.3rem;
+    color: var(--white);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--white);
+}
+
+/* Form Styles in Modal */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.modal .form-group {
+    margin-bottom: 1rem;
+}
+
+.modal .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.modal .form-group input,
+.modal .form-group select,
+.modal .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+.modal .form-group textarea {
+    resize: vertical;
+}
+
+.modal .form-group select option {
+    background: var(--dark-bg);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-actions button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-actions .btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--white);
+}
+
+.modal-actions .btn-primary {
+    background: var(--gold);
+    border: none;
+    color: var(--black);
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+    .filters-bar {
+        flex-direction: column;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn-add {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Smart Action Modal */
+.modal-small {
+    max-width: 450px;
+}
+
+.modal-header h3 {
+    font-size: 1.2rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.smart-status-row {
+    margin-bottom: 1.5rem;
+}
+
+.smart-section {
+    margin-bottom: 1.5rem;
+}
+
+.smart-section h4 {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+}
+
+.smart-requests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.smart-request-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+.smart-request-item .type-badge {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.smart-request-item .type-corrective {
+    background: rgba(255, 107, 107, 0.2);
+    color: var(--danger);
+}
+
+.smart-request-item .type-preventive {
+    background: rgba(78, 205, 196, 0.2);
+    color: var(--success);
+}
+
+.smart-request-item .request-subject {
+    flex: 1;
+    font-size: 0.85rem;
+    color: var(--white);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.smart-request-item .request-stage {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.no-requests {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.smart-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.smart-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.smart-btn.corrective {
+    background: rgba(255, 107, 107, 0.15);
+    color: var(--danger);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.smart-btn.corrective:hover {
+    background: rgba(255, 107, 107, 0.25);
+    transform: translateY(-2px);
+}
+
+.smart-btn.preventive {
+    background: rgba(78, 205, 196, 0.15);
+    color: var(--success);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+}
+
+.smart-btn.preventive:hover {
+    background: rgba(78, 205, 196, 0.25);
+    transform: translateY(-2px);
+}
+
+.smart-btn.view {
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--gold);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.smart-btn.view:hover {
+    background: rgba(212, 175, 55, 0.25);
+    transform: translateY(-2px);
+}
+
+.scrapped-notice {
+    padding: 1rem;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 8px;
+    color: var(--danger);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Equipment Card Scrapped State */
+.equipment-card.scrapped {
+    opacity: 0.6;
+    filter: grayscale(50%);
+}
+
+.equipment-card.scrapped::after {
+    content: 'SCRAPPED';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--danger);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* Smart Action Button */
+.btn-smart-action {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.1) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--gold);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-smart-action:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(212, 175, 55, 0.2) 100%);
+    transform: translateY(-2px);
+}
+
+.btn-maintenance.has-requests {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+    50% { box-shadow: 0 0 0 6px rgba(212, 175, 55, 0); }
+}

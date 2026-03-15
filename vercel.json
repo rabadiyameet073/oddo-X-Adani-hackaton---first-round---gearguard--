@@ -1,0 +1,60 @@
+{
+    "version": 2,
+    "installCommand": "npm install && npm run install:backend",
+    "builds": [
+        {
+            "src": "backend/server.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "index.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "login.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "dashboard.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "equipment.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "requests.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "teams.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "calendar.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "frontend/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "backend/server.js"
+        },
+        {
+            "src": "/frontend/(.*)",
+            "dest": "frontend/$1"
+        },
+        {
+            "src": "/(.*\\.html)",
+            "dest": "/$1"
+        },
+        {
+            "src": "/",
+            "dest": "/index.html"
+        }
+    ]
+}

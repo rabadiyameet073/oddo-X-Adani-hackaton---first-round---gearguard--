@@ -1,0 +1,171 @@
+/* ============================================
+   PREMIUM DESIGN SYSTEM - CSS VARIABLES
+   Maintenance Management System
+   ============================================ */
+
+:root {
+    /* ========== PREMIUM COLOR PALETTE ========== */
+
+    /* Background Colors - Rich Dark Theme */
+    --bg-primary: #050816;
+    --bg-secondary: #0c1322;
+    --bg-tertiary: #131c31;
+    --bg-card: rgba(19, 28, 49, 0.6);
+    --bg-card-hover: rgba(25, 38, 70, 0.8);
+    --bg-glass: rgba(255, 255, 255, 0.03);
+    --bg-glass-strong: rgba(255, 255, 255, 0.08);
+
+    /* Premium Accent Colors */
+    --accent-primary: #00d4ff;
+    --accent-primary-rgb: 0, 212, 255;
+    --accent-secondary: #915eff;
+    --accent-secondary-rgb: 145, 94, 255;
+    --accent-tertiary: #ff6b9d;
+    --accent-tertiary-rgb: 255, 107, 157;
+
+    /* Neon Glow Colors */
+    --neon-cyan: #00ffff;
+    --neon-purple: #bf00ff;
+    --neon-pink: #ff00ff;
+
+    /* Status Colors - Vibrant */
+    --status-success: #00ff9f;
+    --status-success-rgb: 0, 255, 159;
+    --status-warning: #ffc400;
+    --status-warning-rgb: 255, 196, 0;
+    --status-danger: #ff4d6d;
+    --status-danger-rgb: 255, 77, 109;
+    --status-info: #00d4ff;
+    --status-info-rgb: 0, 212, 255;
+
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #a0aec0;
+    --text-muted: #64748b;
+    --text-dark: #050816;
+
+    /* Border Colors - Glassmorphism */
+    --border-default: rgba(255, 255, 255, 0.08);
+    --border-light: rgba(255, 255, 255, 0.04);
+    --border-accent: rgba(0, 212, 255, 0.4);
+    --border-glow: rgba(145, 94, 255, 0.5);
+
+    /* ========== PREMIUM GRADIENTS ========== */
+    --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #915eff 50%, #ff6b9d 100%);
+    --gradient-primary-soft: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(145, 94, 255, 0.2) 100%);
+    --gradient-cyan-purple: linear-gradient(135deg, #00d4ff 0%, #915eff 100%);
+    --gradient-purple-pink: linear-gradient(135deg, #915eff 0%, #ff6b9d 100%);
+    --gradient-success: linear-gradient(135deg, #00ff9f 0%, #00d4ff 100%);
+    --gradient-warning: linear-gradient(135deg, #ffc400 0%, #ff8c00 100%);
+    --gradient-danger: linear-gradient(135deg, #ff4d6d 0%, #ff6b9d 100%);
+    --gradient-dark: linear-gradient(135deg, #131c31 0%, #050816 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
+    --gradient-mesh: radial-gradient(at 40% 20%, rgba(145, 94, 255, 0.15) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, rgba(0, 212, 255, 0.1) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, rgba(255, 107, 157, 0.1) 0px, transparent 50%);
+
+    /* ========== TYPOGRAPHY ========== */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    /* Font Sizes */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.5rem;
+    --text-5xl: 3rem;
+
+    /* Font Weights */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+
+    /* Line Heights */
+    --leading-tight: 1.25;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.75;
+
+    /* ========== SPACING ========== */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+
+    /* ========== LAYOUT ========== */
+    --sidebar-width: 280px;
+    --sidebar-collapsed: 80px;
+    --header-height: 72px;
+    --container-max: 1400px;
+
+    /* ========== BORDERS ========== */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-2xl: 32px;
+    --radius-full: 9999px;
+
+    /* ========== PREMIUM SHADOWS ========== */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.6);
+    --shadow-glow-cyan: 0 0 30px rgba(0, 212, 255, 0.4);
+    --shadow-glow-purple: 0 0 30px rgba(145, 94, 255, 0.4);
+    --shadow-glow-success: 0 0 25px rgba(0, 255, 159, 0.4);
+    --shadow-glow-danger: 0 0 25px rgba(255, 77, 109, 0.4);
+    --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+    /* ========== TRANSITIONS ========== */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-smooth: 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* ========== Z-INDEX ========== */
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-modal: 300;
+    --z-toast: 400;
+    --z-tooltip: 500;
+}
+
+/* ========== ANIMATED BACKGROUND ========== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-mesh);
+    pointer-events: none;
+    z-index: -1;
+    animation: meshGradient 20s ease infinite;
+}
+
+@keyframes meshGradient {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}

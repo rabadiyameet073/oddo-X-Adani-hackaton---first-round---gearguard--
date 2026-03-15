@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://oddo-x-adani-hackaton.vercel.app/">
+    <title>Dashboard - GearGuard</title>
+    <link rel="stylesheet" href="frontend/css/premium-scroll.css">
+    <link rel="stylesheet" href="frontend/css/app.css">
+</head>
+
+<body class="app-page">
+    <!-- Header -->
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Premium Header -->
+    <header class="premium-header" id="header">
+        <a href="index.html" class="header-logo">
+            <span class="logo-icon">🛡️</span>
+            <span class="logo-text">GEARGUARD</span>
+        </a>
+
+        <nav class="header-nav">
+            <a href="dashboard.html" class="nav-link active">Dashboard</a>
+            <a href="equipment.html" class="nav-link">Equipment</a>
+            <a href="teams.html" class="nav-link">Teams</a>
+            <a href="requests.html" class="nav-link">Requests</a>
+            <a href="calendar.html" class="nav-link">Calendar</a>
+            <a href="dashboard.html" class="nav-btn">🚀Get Started</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="app-main">
+        <div class="page-header">
+            <h1 class="page-title">Dashboard</h1>
+            <p class="page-subtitle">Overview of your maintenance operations</p>
+        </div>
+
+        <!-- KPI Cards -->
+        <section class="kpi-grid" id="kpiGrid">
+            <div class="glass-card kpi-card">
+                <div class="kpi-icon">⚙️</div>
+                <div class="kpi-content">
+                    <span class="kpi-value" id="kpiEquipment">-</span>
+                    <span class="kpi-label">Total Equipment</span>
+                </div>
+            </div>
+            <div class="glass-card kpi-card">
+                <div class="kpi-icon">📋</div>
+                <div class="kpi-content">
+                    <span class="kpi-value" id="kpiActive">-</span>
+                    <span class="kpi-label">Active Requests</span>
+                </div>
+            </div>
+            <div class="glass-card kpi-card kpi-warning">
+                <div class="kpi-icon">⚠️</div>
+                <div class="kpi-content">
+                    <span class="kpi-value" id="kpiOverdue">-</span>
+                    <span class="kpi-label">Overdue Requests</span>
+                </div>
+            </div>
+            <div class="glass-card kpi-card kpi-success">
+                <div class="kpi-icon">✅</div>
+                <div class="kpi-content">
+                    <span class="kpi-value" id="kpiCompleted">-</span>
+                    <span class="kpi-label">Completed This Month</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Grid -->
+        <div class="dashboard-grid">
+            <!-- Alerts Section -->
+            <section class="glass-card dashboard-section">
+                <div class="section-header">
+                    <h2>🚨 Maintenance Alerts</h2>
+                </div>
+                <div class="section-content" id="alertsContainer">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="glass-card dashboard-section">
+                <div class="section-header">
+                    <h2>📝 Recent Activity</h2>
+                </div>
+                <div class="section-content" id="activityContainer">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <a href="requests.html?create=true" class="btn-action btn-primary">
+                <span>➕</span> Create Request
+            </a>
+            <a href="equipment.html" class="btn-action btn-secondary">
+                <span>📦</span> View Equipment
+            </a>
+            <a href="calendar.html" class="btn-action btn-secondary">
+                <span>📅</span> Schedule Maintenance
+            </a>
+        </section>
+    </main>
+
+    <script src="frontend/js/shared.js"></script>
+    <script src="frontend/js/shared.js"></script>
+    <script src="frontend/js/dashboard.js"></script>
+
+    <!-- UI Effects Script -->
+    <script>
+        // Custom Cursor
+        const cursor = document.querySelector('.custom-cursor');
+        if (cursor) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+            document.querySelectorAll('a, button, .glass-card').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+            });
+        }
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const headerNav = document.querySelector('.header-nav');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                headerNav.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+
+</html>

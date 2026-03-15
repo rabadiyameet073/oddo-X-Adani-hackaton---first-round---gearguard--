@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "description": "GearGuard - Vercel deployment root",
+  "scripts": {
+    "install:backend": "npm install --prefix backend"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

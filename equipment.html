@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://oddo-x-adani-hackaton.vercel.app/">
+    <title>Equipment - GearGuard</title>
+    <link rel="stylesheet" href="frontend/css/premium-scroll.css">
+    <link rel="stylesheet" href="frontend/css/app.css">
+    <link rel="stylesheet" href="frontend/css/equipment.css">
+</head>
+
+<body class="app-page">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Premium Header -->
+    <header class="premium-header" id="header">
+        <a href="index.html" class="header-logo">
+            <span class="logo-icon">🛡️</span>
+            <span class="logo-text">GEARGUARD</span>
+        </a>
+
+        <nav class="header-nav">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <a href="equipment.html" class="nav-link active">Equipment</a>
+            <a href="teams.html" class="nav-link">Teams</a>
+            <a href="requests.html" class="nav-link">Requests</a>
+            <a href="calendar.html" class="nav-link">Calendar</a>
+            <div class="user-menu">
+                <span class="user-name" id="userName">User</span>
+                <button class="btn-logout" onclick="Auth.logout()">🚪 Logout</button>
+            </div>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="app-main">
+        <div class="page-header">
+            <div>
+                <h1 class="page-title">⚙️ Equipment Manager</h1>
+                <p class="page-subtitle">Track and manage all your equipment assets</p>
+            </div>
+            <button class="btn-primary btn-add" onclick="openEquipmentModal()">
+                <span>➕</span> Add Equipment
+            </button>
+        </div>
+
+        <!-- Filters -->
+        <section class="filters-bar glass-card">
+            <div class="filter-group">
+                <label>Department</label>
+                <select id="filterDepartment">
+                    <option value="">All Departments</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Category</label>
+                <select id="filterCategory">
+                    <option value="">All Categories</option>
+                    <option value="machine">Machine</option>
+                    <option value="vehicle">Vehicle</option>
+                    <option value="computer">Computer</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Status</label>
+                <select id="filterStatus">
+                    <option value="">All Status</option>
+                    <option value="active">Active</option>
+                    <option value="maintenance">Maintenance</option>
+                    <option value="scrapped">Scrapped</option>
+                </select>
+            </div>
+            <div class="filter-group search-group">
+                <label>Search</label>
+                <input type="text" id="filterSearch" placeholder="Name or Serial #...">
+            </div>
+        </section>
+
+        <!-- Equipment Grid -->
+        <section class="equipment-grid" id="equipmentGrid">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Equipment Modal -->
+    <div class="modal" id="equipmentModal">
+        <div class="modal-overlay" onclick="closeEquipmentModal()"></div>
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add Equipment</h2>
+                <button class="modal-close" onclick="closeEquipmentModal()">✕</button>
+            </div>
+            <form id="equipmentForm">
+                <input type="hidden" id="equipmentId">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eqName">Name *</label>
+                        <input type="text" id="eqName" required placeholder="Equipment name">
+                    </div>
+                    <div class="form-group">
+                        <label for="eqSerial">Serial Number</label>
+                        <input type="text" id="eqSerial" placeholder="SN-XXX-XXX">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eqCategory">Category</label>
+                        <select id="eqCategory">
+                            <option value="machine">Machine</option>
+                            <option value="vehicle">Vehicle</option>
+                            <option value="computer">Computer</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="eqDepartment">Department</label>
+                        <select id="eqDepartment"></select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eqTeam">Maintenance Team</label>
+                        <select id="eqTeam"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="eqTechnician">Default Technician</label>
+                        <select id="eqTechnician"></select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eqPurchase">Purchase Date</label>
+                        <input type="date" id="eqPurchase">
+                    </div>
+                    <div class="form-group">
+                        <label for="eqWarranty">Warranty Expiry</label>
+                        <input type="date" id="eqWarranty">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="eqLocation">Location</label>
+                    <input type="text" id="eqLocation" placeholder="Building, Floor, Zone">
+                </div>
+
+                <div class="form-group">
+                    <label for="eqNotes">Notes</label>
+                    <textarea id="eqNotes" rows="3" placeholder="Additional notes..."></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeEquipmentModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Equipment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Smart Action Modal -->
+    <div class="modal" id="smartActionModal">
+        <div class="modal-overlay" onclick="closeSmartActionModal()"></div>
+        <div class="modal-content modal-small glass-card">
+            <div class="modal-header">
+                <h3 id="smartEqName">Equipment</h3>
+                <button class="modal-close" onclick="closeSmartActionModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="smart-status-row" id="smartEqStatus"></div>
+
+                <div class="smart-section">
+                    <h4>Open Requests</h4>
+                    <div class="smart-requests-list" id="smartRecentRequests"></div>
+                </div>
+
+                <div class="smart-section">
+                    <h4>Quick Actions</h4>
+                    <div class="smart-actions" id="smartActions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="frontend/js/shared.js"></script>
+    <script src="frontend/js/equipment.js"></script>
+
+    <!-- UI Effects Script -->
+    <script>
+        // Custom Cursor
+        const cursor = document.querySelector('.custom-cursor');
+        if (cursor) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+            document.querySelectorAll('a, button, .glass-card').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+            });
+        }
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const headerNav = document.querySelector('.header-nav');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                headerNav.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://oddo-x-adani-hackaton.vercel.app/">
+    <title>GearGuard - The Ultimate Maintenance Tracker</title>
+    <meta name="description"
+        content="Track equipment, manage teams, and streamline maintenance requests with GearGuard">
+
+    <!-- Premium CSS -->
+    <link rel="stylesheet" href="frontend/css/premium-scroll.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Premium Header -->
+    <header class="premium-header" id="header">
+        <a href="index.html" class="header-logo">
+            <span class="logo-icon">🛡️</span>
+            <span class="logo-text">GEARGUARD</span>
+        </a>
+
+        <nav class="header-nav">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <a href="equipment.html" class="nav-link">Equipment</a>
+
+
+            <a href="teams.html" class="nav-link">Teams</a>
+            <a href="requests.html" class="nav-link">Requests</a>
+            <a href="calendar.html" class="nav-link">Calendar</a>
+            <a href="dashboard.html" class="nav-btn">🚀Get Started</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+
+    <!-- Section Indicators -->
+    <nav class="section-indicators" id="sectionIndicators">
+        <button class="section-indicator active" data-section="0" aria-label="Hero"></button>
+        <button class="section-indicator" data-section="1" aria-label="Problem"></button>
+        <button class="section-indicator" data-section="2" aria-label="Solution"></button>
+        <button class="section-indicator" data-section="3" aria-label="Features"></button>
+        <button class="section-indicator" data-section="4" aria-label="CTA"></button>
+    </nav>
+
+    <!-- Scroll Container -->
+    <div class="scroll-container" id="scrollContainer">
+
+        <!-- Section 1: Hero -->
+        <section class="full-screen-section section-hero" id="section-0">
+            <div class="section-bg bg-gradient-1"></div>
+
+            <!-- 3D Floating Elements -->
+            <div class="hero-3d-elements">
+                <!-- Floating Gears -->
+                <div class="floating-gear gear-1">⚙️</div>
+                <div class="floating-gear gear-2">🔧</div>
+                <div class="floating-gear gear-3">🛠️</div>
+                <div class="floating-gear gear-4">⚙️</div>
+                <div class="floating-gear gear-5">🔩</div>
+
+                <!-- Glowing Orbs -->
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
+                <div class="glow-orb orb-3"></div>
+
+                <!-- Animated Lines -->
+                <div class="animated-line line-1"></div>
+                <div class="animated-line line-2"></div>
+                <div class="animated-line line-3"></div>
+
+                <!-- 3D Rotating Ring -->
+                <div class="rotating-ring"></div>
+            </div>
+
+            <!-- Particle Background -->
+            <div class="particles" id="heroParticles"></div>
+
+            <div class="hero-content hero-3d-content">
+                <span class="hero-badge animate-fade-in">🏭 Maintenance Management System</span>
+                <h1 class="hero-headline animate-slide-up">Track Equipment,</h1>
+                <h2 class="hero-subheadline animate-slide-up delay-1">Not Problems</h2>
+                <p class="hero-tagline animate-fade-in delay-2">GearGuard — The Ultimate Maintenance Tracker</p>
+
+                <div class="hero-buttons animate-fade-in delay-3">
+                    <a href="dashboard.html" class="btn-primary btn-3d">🚀 Launch Dashboard</a>
+                    <a href="#section-1" class="btn-secondary btn-3d">Learn More</a>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <div class="arrow-down">↓</div>
+            </div>
+        </section>
+
+        <!-- Section 2: The Problem -->
+        <section class="full-screen-section section-problem" id="section-1">
+            <div class="section-bg bg-gradient-2"></div>
+
+            <div class="section-content">
+                <h2 class="section-title">The Problem We Solve</h2>
+                <p class="section-subtitle">
+                    Equipment breaks down. Teams scramble. Requests get lost.
+                    Traditional maintenance tracking is <strong style="color: #ff6b6b;">chaotic, outdated, and
+                        costly</strong>.
+                </p>
+
+                <div class="comparison-row">
+                    <div class="glass-card comparison-box before">
+                        <h3>Without GearGuard</h3>
+                        <ul>
+                            <li>Lost maintenance requests</li>
+                            <li>Unclear equipment status</li>
+                            <li>Unassigned technicians</li>
+                            <li>No visibility into workload</li>
+                            <li>Reactive, not proactive</li>
+                        </ul>
+                    </div>
+
+                    <div class="vs-badge">VS</div>
+
+                    <div class="glass-card comparison-box after">
+                        <h3>With GearGuard</h3>
+                        <ul>
+                            <li>Organized Kanban workflow</li>
+                            <li>Real-time equipment health</li>
+                            <li>Smart technician assignment</li>
+                            <li>Dashboard with live KPIs</li>
+                            <li>Preventive scheduling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Solution -->
+        <section class="full-screen-section section-solution" id="section-2">
+            <div class="section-bg bg-gradient-3"></div>
+
+            <div class="section-content">
+                <h2 class="section-title">The GearGuard Advantage</h2>
+                <p class="section-subtitle">
+                    One platform to manage equipment, teams, and maintenance requests.
+                    From breakdown to repair — track every step.
+                </p>
+
+                <div class="features-grid">
+                    <div class="glass-card feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>Equipment Tracking</h3>
+                        <p>Monitor all assets with health status, warranty info, and maintenance history. Smart button
+                            creates requests instantly.</p>
+                    </div>
+
+                    <div class="glass-card feature-card">
+                        <div class="feature-icon">👥</div>
+                        <h3>Team Management</h3>
+                        <p>Organize technicians into specialized teams. Auto-assign based on equipment type and workload
+                            balance.</p>
+                    </div>
+
+                    <div class="glass-card feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h3>Kanban Workflow</h3>
+                        <p>Visual request board: New → In Progress → Repaired → Scrap. Drag and drop to update status.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Features Deep Dive -->
+        <section class="full-screen-section section-features" id="section-3">
+            <div class="section-bg bg-gradient-1"></div>
+
+            <div class="section-content">
+                <h2 class="section-title">Built for Modern Maintenance</h2>
+                <p class="section-subtitle">
+                    Every feature designed to save time and prevent breakdowns.
+                </p>
+
+                <div class="features-grid">
+                    <div class="glass-card feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Live Dashboard</h3>
+                        <p>Critical equipment alerts, technician load, open requests — all at a glance.</p>
+                    </div>
+
+                    <div class="glass-card feature-card">
+                        <div class="feature-icon">📅</div>
+                        <h3>Preventive Calendar</h3>
+                        <p>Schedule routine maintenance before breakdowns happen. Never miss a checkup.</p>
+                    </div>
+
+                    <div class="glass-card feature-card">
+                        <div class="feature-icon">🔔</div>
+                        <h3>Overdue Alerts</h3>
+                        <p>Automatic notifications for requests exceeding SLA. Stay on top of priorities.</p>
+                    </div>
+
+                    <div class="glass-card feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Smart Auto-Fill</h3>
+                        <p>Select equipment, get team and technician suggestions automatically.</p>
+                    </div>
+
+                    <div class="glass-card feature-card">
+                        <div class="feature-icon">🗑️</div>
+                        <h3>Scrap Logic</h3>
+                        <p>Mark equipment as scrapped and auto-update all linked requests.</p>
+                    </div>
+
+                    <div class="glass-card feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Fully Responsive</h3>
+                        <p>Works on desktop, tablet, and mobile. Manage on the go.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Final CTA -->
+        <section class="full-screen-section section-cta" id="section-4">
+            <div class="section-bg bg-gradient-2"></div>
+
+            <div class="section-content">
+                <h2 class="cta-headline">Stop Tracking Spreadsheets.</h2>
+                <h3 class="cta-subheadline">Start Tracking Equipment.</h3>
+                <p class="cta-brand">GEARGUARD</p>
+                <p class="cta-tagline">The Ultimate Maintenance Tracker</p>
+
+                <div class="cta-buttons">
+                    <a href="dashboard.html" class="btn-primary">🚀 Launch Dashboard</a>
+                    <a href="equipment.html" class="btn-secondary">📦 View Equipment</a>
+                    <a href="requests.html" class="btn-secondary">📋 Open Kanban</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Footer -->
+        <footer class="premium-footer">
+            <div class="footer-brand">
+                <h2 class="footer-logo">🛡️ GEARGUARD</h2>
+                <p class="footer-tagline">The Ultimate Maintenance Tracker</p>
+            </div>
+
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Modules</h3>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="equipment.html">Equipment</a></li>
+                        <li><a href="teams.html">Teams</a></li>
+                        <li><a href="requests.html">Requests</a></li>
+                        <li><a href="calendar.html">Calendar</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="#">Kanban Board</a></li>
+                        <li><a href="#">Smart Auto-Fill</a></li>
+                        <li><a href="#">Overdue Alerts</a></li>
+                        <li><a href="#">Preventive Scheduling</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">For Teams</a></li>
+                        <li><a href="#">For Managers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 GearGuard. Hackathon Project.</p>
+                <p class="footer-slogan">Track Equipment, Not Problems.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Premium JavaScript -->
+    <script>
+        // Custom Cursor
+        const cursor = document.querySelector('.custom-cursor');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        const scrollContainer = document.getElementById('scrollContainer');
+
+        scrollContainer.addEventListener('scroll', () => {
+            if (scrollContainer.scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Section Indicators
+        const indicators = document.querySelectorAll('.section-indicator');
+        const sections = document.querySelectorAll('.full-screen-section');
+
+        // Click to scroll
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', () => {
+                const sectionIndex = indicator.dataset.section;
+                sections[sectionIndex].scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Update active indicator on scroll
+        const observerOptions = {
+            root: scrollContainer,
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Array.from(sections).indexOf(entry.target);
+                    indicators.forEach(ind => ind.classList.remove('active'));
+                    indicators[index].classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const headerNav = document.querySelector('.header-nav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            headerNav.classList.toggle('active');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ========== DYNAMIC PARTICLE SYSTEM ==========
+        function createParticles() {
+            const particleContainer = document.getElementById('heroParticles');
+            if (!particleContainer) return;
+
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.cssText = `
+                    position: absolute;
+                    width: ${Math.random() * 6 + 2}px;
+                    height: ${Math.random() * 6 + 2}px;
+                    background: rgba(255, 215, 0, ${Math.random() * 0.5 + 0.2});
+                    border-radius: 50%;
+                    left: ${Math.random() * 100}%;
+                    top: ${Math.random() * 100}%;
+                    animation: particleFloat ${Math.random() * 10 + 8}s ease-in-out infinite;
+                    animation-delay: ${Math.random() * -10}s;
+                    pointer-events: none;
+                `;
+                particleContainer.appendChild(particle);
+            }
+        }
+
+        // Add particle animation keyframes dynamically
+        const particleStyle = document.createElement('style');
+        particleStyle.textContent = `
+            @keyframes particleFloat {
+                0%, 100% {
+                    transform: translate(0, 0) scale(1);
+                    opacity: 0.3;
+                }
+                25% {
+                    transform: translate(30px, -50px) scale(1.2);
+                    opacity: 0.6;
+                }
+                50% {
+                    transform: translate(-20px, -100px) scale(0.8);
+                    opacity: 0.4;
+                }
+                75% {
+                    transform: translate(40px, -50px) scale(1.1);
+                    opacity: 0.5;
+                }
+            }
+        `;
+        document.head.appendChild(particleStyle);
+
+        // Initialize particles
+        createParticles();
+
+        // ========== MOUSE PARALLAX EFFECT ==========
+        const heroSection = document.querySelector('.section-hero');
+        const hero3dElements = document.querySelector('.hero-3d-elements');
+        const heroContent = document.querySelector('.hero-3d-content');
+
+        if (heroSection && hero3dElements) {
+            heroSection.addEventListener('mousemove', (e) => {
+                const rect = heroSection.getBoundingClientRect();
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const mouseX = e.clientX - rect.left - centerX;
+                const mouseY = e.clientY - rect.top - centerY;
+
+                // Parallax for 3D elements (moves opposite to mouse)
+                const moveX = (mouseX / centerX) * 20;
+                const moveY = (mouseY / centerY) * 20;
+
+                hero3dElements.style.transform = `translate(${-moveX * 0.5}px, ${-moveY * 0.5}px)`;
+
+                // Subtle tilt for content
+                if (heroContent) {
+                    const tiltX = (mouseY / centerY) * 3;
+                    const tiltY = (mouseX / centerX) * -3;
+                    heroContent.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+                }
+            });
+
+            // Reset on mouse leave
+            heroSection.addEventListener('mouseleave', () => {
+                hero3dElements.style.transform = 'translate(0, 0)';
+                if (heroContent) {
+                    heroContent.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
